@@ -28,6 +28,14 @@ public class Gaulois {
 		romain.recevoirCoup(force / 3);
 	}
 	
+	public int getEffetPotion() {
+		return effetPotion;
+	}
+
+	public void setEffetPotion(int effetPotion) {
+		this.effetPotion = effetPotion;
+	}
+	
 	@Override
 	public String toString() {
 		return "Gaulois [nom=" + nom + ", force=" + force
@@ -35,9 +43,19 @@ public class Gaulois {
 	}
 	
 	public static void main(String[] args) {
-		//TODO créer un main permettant de tester la classe Gaulois
+		Gaulois axterix = new Gaulois("Axtérix",8);
+		Romain jules = new Romain("Jules",6);
+		System.out.println(axterix.toString());
+		axterix.parler("Bonjour");
+		System.out.println(axterix.prendreParole());
+		axterix.frapper(jules);
+		
 	}
-}
+	
+
+	
+} 
+
 
 
 
