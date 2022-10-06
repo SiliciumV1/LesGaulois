@@ -1,5 +1,6 @@
 package histoire;
 
+import personnages.Druide;
 import personnages.Gaulois;
 import personnages.Romain;
 
@@ -7,14 +8,16 @@ public class Scenario {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub test 
-		Gaulois axterix = new Gaulois("Axtérix",10);
-		Romain minus = new Romain("Minus",8);
-		axterix.parler("Bonjour à tous");
-		minus.parler("UN GAU... UNGAUGAU...");
-		axterix.frapper(minus);
-		axterix.frapper(minus);
-		axterix.frapper(minus);
+		int effetPotion;
 		
+		Druide panoramix = new Druide("panoramix",5,10);
+		Gaulois axterix = new Gaulois("Axtérix",8);
+		Romain jules = new Romain("Jules",6);
+		
+		effetPotion=panoramix.preparerPotion();
+		axterix.boirePotion(effetPotion);
+		
+		axterix.frapper(jules,effetPotion);
 		
 	}
 
