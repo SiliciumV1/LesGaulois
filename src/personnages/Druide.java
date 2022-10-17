@@ -36,7 +36,7 @@ public class Druide {
 		this.forcePotion = forcePotion;
 	}
 	
-	public int preparerPotion() {
+	public void preparerPotion() {
 		Random random = new Random();
 		forcePotion = effetPotionMin + random.nextInt(effetPotionMax-effetPotionMin+1);
 		if (forcePotion>7) {
@@ -46,13 +46,28 @@ public class Druide {
 			parler("Je n'ai pas trouvé tous les ingrédients, ma potion est" + 
 					" seulement de force : "+ forcePotion);
 		}
-		return forcePotion;
 	}
 	
+	public void booster(Gaulois nom) {
+		// TODO Auto-generated method stub
+		if (nom.getNom()=="Obélix") {
+			parler("Non, Obélix !... Tu n'auras pas de potion magique !");
+			nom.parler("Par Bélénos, ce n'est pas juste");
+			
+		}
+		else {
+			nom.boirePotion(forcePotion);
+		}
+
+
+	}
 	
 	public static void main(String[] args) {
 		Druide panoramix = new Druide("panoramix",5,10);
+		Gaulois Obélix = new Gaulois("Obélix",5);
 		panoramix.preparerPotion();
+		
+		
 	}
 	
 	
