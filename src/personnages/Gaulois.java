@@ -50,7 +50,7 @@ public class Gaulois {
 	public static void main(String[] args) {
 		Gaulois axterix = new Gaulois("Axtérix",8);
 		Romain jules = new Romain("Jules",6);
-		axterix.boirePotion(2);
+		System.out.println(Equipement.CASQUE);
 		
 	}
 	
