@@ -46,11 +46,16 @@ public class Village {
 		// The value of the local variable gaulois is not used
 		// Car gaulois n'est pas utilisé
 		Chef Abraracourcix = new Chef("Abraracourcix", 6, 1, village);
+		village.setChef(Abraracourcix);
+		
 		Gaulois axterix = new Gaulois("Axtérix", 8);
+		village.ajouterHabitant(axterix,30);
+		
 		// Gaulois gaulois = village.trouverHabitant(1);
 		// System.out.println(gaulois);
-		village.setChef(Abraracourcix);
+		
 		Gaulois Obélix = new Gaulois("Obélix", 25);
+		
 		village.ajouterHabitant(Obélix,30);
 		village.afficherVillageois();
 
