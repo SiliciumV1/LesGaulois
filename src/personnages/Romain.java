@@ -80,6 +80,7 @@ public class Romain {
 			forceCoup = CalculResistanceEquipement(forceCoup);
 			force -= forceCoup;
 			if (force > 0) {
+
 				parler("Aïe");
 			} else {
 				equipementEjecte = ejecterEquipement();
@@ -113,6 +114,10 @@ public class Romain {
 		parler(texte);
 		forceCoup -= resistanceEquipement;
 
+		if (forceCoup < 0) {
+			return 0;
+		}
+
 		return forceCoup;
 
 	}
@@ -138,5 +143,9 @@ public class Romain {
 	public static void main(String[] args) {
 
 		//
+	}
+
+	public int getForce() {
+		return force;
 	}
 }

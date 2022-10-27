@@ -1,5 +1,7 @@
 package personnages;
 
+import Lieu.Musee;
+
 public class Gaulois {
 	private int force, nb_trophees;
 	private String nom;
@@ -9,6 +11,10 @@ public class Gaulois {
 	public Gaulois(String nom, int force) {
 		this.nom = nom;
 		this.force = force;
+	}
+
+	public int getForce() {
+		return force;
 	}
 
 	public String getNom() {
@@ -41,6 +47,7 @@ public class Gaulois {
 		}
 		return;
 	}
+	//
 
 	public int getEffetPotion() {
 		return effetPotion;
@@ -58,6 +65,23 @@ public class Gaulois {
 	public void boirePotion(int forcePotion) {
 		effetPotion = forcePotion;
 		parler("Merci Druide, je sens que ma force est " + effetPotion + " fois décuplée. »");
+
+	}
+
+	public void faireUneDonnation(Musee musee) {
+		if (nb_trophees > 0) {
+			System.out.println(" « Je donne au musee tous mes trophees :");
+			for (int i = 0; i < nb_trophees; i++) {
+				if (i == nb_trophees - 1) {
+					// musee.getReserve()[musee.getNbTrophee()].getGaulois()
+					musee.donnerTrophees(this, trophees[i]);
+					System.out.println("- " + trophees[i] + " »");
+				} else {
+					musee.donnerTrophees(this, trophees[i]);
+					System.out.println("- " + trophees[i]);
+				}
+			}
+		}
 
 	}
 
